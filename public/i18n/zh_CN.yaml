@@ -5,17 +5,16 @@ save: 保存
 byeMenu: 再见，菜单！
 helloPlugin: 你好，插件！
 byePlugin: 再见，插件！
-showDialog: 弹出一个对话框
+syncNotes: 同步笔记
+resetSync: 重置同步状态
+resetSyncTime: 重置同步时间
 removedData: 数据已删除
 confirmRemove: 确认删除 ${name} 中的数据？
 insertEmoji: 插入表情
 removeSpace: 移除空格
 getTab: 在日志中打印出已打开的所有自定义页签
-name: 思源
+name: Dinox 同步插件
 hello:
-  makesure: 使用这个模板之前，请阅读<a href="https://github.com/siyuan-note/plugin-sample">官方教程</a>,
-    确保自己已经理解了插件的基本开发流程。
-hintTitle: 关于
-hintDesc: "<a href='https://github.com/siyuan-note/plugin-sample-vite-svelte'>\U0001F517
-  plugin-sample-vite-svelte</a><br>\U0001F4BB @frostime<br>\U0001F4BB @88250<br>\U0001F4BB
-  @zxkmm"
+  makesure: 这是一个用于同步 Dinox 笔记到思源笔记的插件。请在设置中配置您的 Dinox Token 和目标笔记本 ID。
+hintTitle: 关于 Dinox 同步
+hintDesc: "Dinox 同步插件 v1.0<br>🔗 与 Dinox 应用同步笔记<br>📝 支持双向同步<br>⚙️ 可配置同步选项"
