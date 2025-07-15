@@ -6,6 +6,7 @@ byeMenu: 再见，菜单！
 helloPlugin: 你好，插件！
 byePlugin: 再见，插件！
 syncNotes: 同步笔记
+smartSync: 智能同步当前文档
 resetSync: 重置同步状态
 resetSyncTime: 重置同步时间
 removedData: 数据已删除

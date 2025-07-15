@@ -407,6 +407,44 @@ export async function exportMdContent(id: DocumentId): Promise<IResExportMdConte
     return request(url, data);
 }
 
+/**
+ * 导出文档的 Markdown 内容，去掉 frontmatter 和标题
+ * @param id 文档 ID
+ * @returns 去掉 frontmatter 和标题的正文内容
+ */
+export async function exportMdContentWithoutFrontmatterAndTitle(id: DocumentId): Promise<IResExportMdContent> {
+    const result = await exportMdContent(id);
+    
+    if (!result || !result.content) {
+        return result;
+    }
+
+    let content = result.content;
+    
+    // 1. 去掉 frontmatter（以 --- 开始和结束的部分）
+    const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n/;
+    content = content.replace(frontmatterRegex, '');
+    
+    // 2. 去掉标题行（以 # 开始的行，包括 #、##、### 等）
+    const lines = content.split('\n');
+    const filteredLines = [];
+    
+    for (let line of lines) {
+        // 跳过以 # 开始的标题行（考虑行首可能有空格）
+        if (!/^\s*#+\s/.test(line)) {
+            filteredLines.push(line);
+        }
+    }
+    
+    // 去掉开头的空行
+    let processedContent = filteredLines.join('\n').trim();
+    
+    return {
+        hPath: result.hPath,
+        content: processedContent
+    };
+}
+
 export async function exportResources(paths: string[], name: string): Promise<IResExportResources> {
     let data = {
         paths: paths,

@@ -6,6 +6,7 @@
     "helloPlugin": "Hello, Plugin!",
     "byePlugin": "Bye, Plugin!",
     "syncNotes": "Sync Notes",
+    "smartSync": "Smart Sync Current Document",
     "resetSync": "Reset Sync Status",
     "resetSyncTime": "Reset Sync Time",
     "removedData": "Data deleted",
